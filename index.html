@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenStart – Smart Cultivation Guide</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="top-nav">
+    <div class="brand">
+      <div class="brand-logo">🌱</div>
+      <div class="brand-text">
+        <span class="brand-title">GreenStart</span>
+        <span class="brand-subtitle">Cultivation & Maintenance Guide</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#planner">Crop Planner</a>
+      <a href="#learning-path">Learning Path</a>
+      <a href="#maintenance">Maintenance</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Start farming with confidence</h1>
+        <p>
+          Choose the right crop for your climate and season, then follow a
+          clear, step‑by‑step guide from sowing to harvest and long‑term
+          maintenance.
+        </p>
+        <div class="hero-actions">
+          <a href="#planner" class="btn primary">Start with Crop Planner</a>
+          <a href="#learning-path" class="btn ghost">View Full Learning Path</a>
+        </div>
+        <div class="hero-meta">
+          <span>Beginner‑friendly</span>
+          <span>Mobile ready</span>
+          <span>From seed to sale</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="stat-card">
+          <h2>Smart Crop Suggestions</h2>
+          <p>Filter by climate, rainfall, month, and land size.</p>
+        </div>
+        <div class="stat-card secondary">
+          <h2>Step‑by‑step Tasks</h2>
+          <p>Clear weekly tasks from land prep to harvest.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CROP PLANNER (DYNAMIC) -->
+    <section id="planner" class="section">
+      <header class="section-header">
+        <h2>Crop Planner</h2>
+        <p>
+          Select your climate, current month, and season to see suitable crops
+          with basic requirements and maintenance level.
+        </p>
+      </header>
+
+      <div class="planner-layout">
+        <form class="planner-form" id="plannerForm">
+          <div class="form-group">
+            <label for="climate">Climate</label>
+            <select id="climate" required>
+              <option value="">Select climate</option>
+              <option value="tropical">Tropical</option>
+              <option value="subtropical">Sub‑tropical</option>
+              <option value="temperate">Temperate</option>
+              <option value="arid">Arid / Semi‑arid</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="month">Current month</label>
+            <select id="month" required>
+              <option value="">Select month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="season">Season</label>
+            <select id="season" required>
+              <option value="">Select season</option>
+              <option value="kharif">Rainy / Kharif</option>
+              <option value="rabi">Winter / Rabi</option>
+              <option value="summer">Summer</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="landSize">Land size (approx.)</label>
+            <select id="landSize">
+              <option value="">Optional</option>
+              <option value="small">Up to 1 acre</option>
+              <option value="medium">1–5 acres</option>
+              <option value="large">Above 5 acres</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn primary full-width">
+            Show suitable crops
+          </button>
+        </form>
+
+        <div class="planner-results" id="plannerResults">
+          <p class="placeholder">
+            Fill the form and click “Show suitable crops” to see suggestions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEARNING PATH -->
+    <section id="learning-path" class="section alt">
+      <header class="section-header">
+        <h2>Complete learning path</h2>
+        <p>
+          Follow each stage from pre‑planning to harvest and post‑harvest
+          handling. Expand a step to see details.
+        </p>
+      </header>
+
+      <div class="timeline" id="timeline">
+        <!-- Step 1 -->
+        <article class="timeline-step">
+          <button class="step-header">
+            <div>
+              <span class="step-label">Step 1</span>
+              <h3>Understand your land & climate</h3>
+            </div>
+            <span class="step-toggle">+</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Record your average temperature, rainfall pattern, soil type, and
+              water availability. This information is the foundation for
+              selecting a suitable crop.
+            </p>
+            <ul>
+              <li>Note months with heavy rain or drought.</li>
+              <li>Check soil texture (sandy, loam, clay) and pH if possible.</li>
+              <li>List reliable water sources (rain, well, canal, borewell).</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Step 2 -->
+        <article class="timeline-step">
+          <button class="step-header">
+            <div>
+              <span class="step-label">Step 2</span>
+              <h3>Select crop using planner</h3>
+            </div>
+            <span class="step-toggle">+</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Use the Crop Planner above to shortlist 2–3 crops that match your
+              climate and season. Then prefer crops with moderate maintenance
+              and local market demand.
+            </p>
+            <ul>
+              <li>Start with one or two crops only.</li>
+              <li>Talk to nearby farmers about yield and pests.</li>
+              <li>Check local prices and demand in the last few seasons.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="timeline-step">
+          <button class="step-header">
+            <div>
+              <span class="step-label">Step 3</span>
+              <h3>Plan inputs and budget</h3>
+            </div>
+            <span class="step-toggle">+</span>
+          </button>
+          <div class="step-body">
+            <p>
+              List seed quantity, fertilizers or manures, pesticides (if
+              required), irrigation needs, and labour. Estimate cost versus
+              expected yield before sowing.
+            </p>
+            <ul>
+              <li>Calculate seed rate per acre and multiply by your land.</li>
+              <li>Include tools, machinery hiring, and transport costs.</li>
+              <li>Keep 10–15% extra budget for emergencies.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="timeline-step">
+          <button class="step-header">
+            <div>
+              <span class="step-label">Step 4</span>
+              <h3>Land preparation & sowing</h3>
+            </div>
+            <span class="step-toggle">+</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Level the field, remove weeds, and add organic matter if
+              available. Follow recommended spacing and sowing depth for the
+              selected crop.
+            </p>
+            <ul>
+              <li>Do primary & secondary tillage if needed.</li>
+              <li>Apply basal manure before final ploughing.</li>
+              <li>Use line sowing instead of broadcasting for easier weeding.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Step 5 -->
+        <article class="timeline-step">
+          <button class="step-header">
+            <div>
+              <span class="step-label">Step 5</span>
+              <h3>Crop growth & regular care</h3>
+            </div>
+            <span class="step-toggle">+</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Monitor moisture, nutrients, and weeds weekly during growth.
+              Schedule irrigation according to soil moisture and crop stage.
+            </p>
+            <ul>
+              <li>Thin excess plants for proper spacing.</li>
+              <li>Top‑dress fertilizers at key growth stages.</li>
+              <li>Use mulching where possible to save water and reduce weeds.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Step 6 -->
+        <article class="timeline-step">
+          <button class="step-header">
+            <div>
+              <span class="step-label">Step 6</span>
+              <h3>Pest, disease & risk management</h3>
+            </div>
+            <span class="step-toggle">+</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Scout the field twice a week. Identify common pests and diseases
+              for your crop and act early using recommended safe practices.
+            </p>
+            <ul>
+              <li>Prefer resistant varieties and crop rotation.</li>
+              <li>Use traps and biological control where available.</li>
+              <li>Follow label instructions strictly for any chemical use.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Step 7 -->
+        <article class="timeline-step">
+          <button class="step-header">
+            <div>
+              <span class="step-label">Step 7</span>
+              <h3>Harvest & post‑harvest</h3>
+            </div>
+            <span class="step-toggle">+</span>
+          </button>
+          <div class="step-body">
+            <p>
+              Harvest at the right maturity stage to maximize quality and
+              shelf‑life. Handle produce gently and store under suitable
+              conditions.
+            </p>
+            <ul>
+              <li>Harvest in cool hours (morning/evening) if possible.</li>
+              <li>Clean and grade produce before sale or storage.</li>
+              <li>Dry grains properly to safe moisture before storage.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MAINTENANCE DETAIL CARDS -->
+    <section id="maintenance" class="section">
+      <header class="section-header">
+        <h2>Maintenance by stage</h2>
+        <p>
+          Understand exactly how much time and care is required at each stage
+          for a typical crop. These are general guidelines for first‑time
+          farmers.
+        </p>
+      </header>
+
+      <div class="cards-grid">
+        <article class="info-card">
+          <h3>Land preparation</h3>
+          <p class="tag">Duration: 1–3 weeks</p>
+          <ul>
+            <li>Time‑intensive for a short period.</li>
+            <li>Includes ploughing, leveling, bund making, and manuring.</li>
+            <li>Mostly machine/animal power; plan labour in advance.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Early growth (0–4 weeks)</h3>
+          <p class="tag">Maintenance: High</p>
+          <ul>
+            <li>Frequent weeding and gap filling.</li>
+            <li>Close monitoring of germination and seedling health.</li>
+            <li>Light, frequent irrigation depending on soil.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Vegetative / tillering</h3>
+          <p class="tag">Maintenance: Medium</p>
+          <ul>
+            <li>Scheduled irrigation and nutrient top‑dressing.</li>
+            <li>Weed control at 20–30 and 40–45 days after sowing.</li>
+            <li>Regular scouting for pests and diseases.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Flowering & fruiting</h3>
+          <p class="tag">Maintenance: High</p>
+          <ul>
+            <li>Moisture stress here can drastically reduce yield.</li>
+            <li>Balanced nutrition is critical.</li>
+            <li>Extra care to protect from pests, diseases, and lodging.</li>
+          </ul>
+        </article>
+
+        <article class="info-card">
+          <h3>Harvest & storage</h3>
+          <p class="tag">Maintenance: Medium</p>
+          <ul>
+            <li>Short but labour‑intensive period.</li>
+            <li>Requires tools, bags, storage space, and transport.</li>
+            <li>Post‑harvest losses can be reduced with simple practices.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section alt">
+      <header class="section-header">
+        <h2>Frequently asked questions</h2>
+        <p>
+          Quick answers to common beginner doubts about starting cultivation and
+          managing time and cost.
+        </p>
+      </header>
+
+      <div class="faq">
+        <details>
+          <summary>How many hours per week do I need to farm?</summary>
+          <p>
+            For a small plot (up to 1 acre), expect 10–20 hours per week during
+            peak periods like land preparation and weeding, and 5–10 hours in
+            calmer weeks.
+          </p>
+        </details>
+        <details>
+          <summary>Should I start with vegetables or grains?</summary>
+          <p>
+            Vegetables may give faster returns but usually require higher
+            maintenance. Grains can be more forgiving but need more land and
+            storage. Choose based on your time and local market.
+          </p>
+        </details>
+        <details>
+          <summary>Can I grow multiple crops together?</summary>
+          <p>
+            Yes, but for your first season, intercropping should be simple
+            (for example: one main crop with one short‑duration intercrop) to
+            avoid complexity.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div>
+        <h3>GreenStart</h3>
+        <p>Guiding first‑time farmers from planning to harvest.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#planner">Planner</a>
+        <a href="#learning-path">Learning</a>
+        <a href="#maintenance">Maintenance</a>
+      </div>
+    </div>
+    <p class="footer-bottom">
+      © <span id="year"></span> GreenStart. Educational use only.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
